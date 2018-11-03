@@ -1,3 +1,5 @@
+ <button [routerLink] = "['/',{outlets:{chat:null, primary: ['accueil']}}]">Déconnection</button>
+ 
  <h1>Liste des gestionnaires</h1>
  <ul>
     <li *ngFor = "let gest of listGest"><a routerLink='/admin/gest/{{gest._id}}'>{{gest.nom}}  </a></li>
