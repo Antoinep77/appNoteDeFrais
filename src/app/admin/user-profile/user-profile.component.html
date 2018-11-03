@@ -1,0 +1,26 @@
+<div *ngIf = "user">
+
+<h1>Informations sur {{user.nom}}</h1>
+
+<div>Dernières notes de frais soumises :
+  <ul>
+    <li *ngFor = "let ndf of listNdf">{{ndf.userData.intitule}}  {{ndf.userData.montant}}  {{ndf.userData.devise}} {{ndf.userData.date}} {{ndf.userData.statut}}</li>
+  </ul>
+</div>
+
+<div *ngIf="userGest">
+  Son gestionnaire est {{userGest.nom}} 
+</div>
+
+<div>
+  Changez son gestionnaire : 
+  <select [(ngModel)]="newIdGest">
+    <option *ngFor = "let gest of listGest" [value] = "gest._id">{{gest.nom}}</option>
+  </select>
+  <button (click)="changeIdGest()">Valider</button>
+  </div>
+  <div>
+  <button (click)=deleteUser()>Supprimer l'utilisateur</button>
+
+  </div>
+</div>

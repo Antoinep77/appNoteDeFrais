@@ -1,0 +1,20 @@
+<h1 *ngIf = "typeUser=='user'">Ajouter un nouvel utilisateur</h1>
+<h1 *ngIf = "typeUser=='gest'">Ajouter un nouveau gestionnaire</h1>
+
+<form (ngSubmit) = "envoyer()" #formulaire novalidate>
+<div>
+  <label>Nom :
+    <input name ="nom" [(ngModel)]="nom" required/>
+  </label>
+</div>
+<div>
+  <label *ngIf="typeUser=='user'"> Gestionnaire (optionnel)
+    <select [(ngModel)]="idGest" name ='idGest'>
+      <option *ngFor = "let gest of listeGest" [value] = "gest._id">{{gest.nom}}</option>
+    </select>
+  </label>
+</div>
+
+  <button type ="submit">Ajouter</button>
+
+</form>

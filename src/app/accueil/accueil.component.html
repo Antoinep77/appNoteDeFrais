@@ -1,0 +1,21 @@
+<h1>
+  Connectez-vous
+</h1>
+<div>
+<label>
+  Connection en tant que :
+  <select [(ngModel)] = "typeUser">
+    <option value="user" >Utilisateur</option>
+    <option value="gest"> Gestionnaire </option>
+    <option value = "admin">Administrateur</option>
+  </select>
+</label>
+</div>
+
+<div>
+<label>
+  Nom d'utilisateur
+  <input [(ngModel)]='username'>
+  </label>
+  <button (click)= 'valider()'>Valider</button>
+</div>

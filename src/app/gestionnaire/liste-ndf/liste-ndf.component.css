@@ -1,0 +1,25 @@
+.list{
+    float:left;
+    margin: 10px 20px 0 20px;
+    height:90vh;
+    text-align: left;
+}
+
+h4{
+    text-align: center;
+}
+.subtitle{
+    font-size: small;
+}
+.deconnect{
+    float: left;
+    color: gray;
+    cursor: pointer;
+    margin : 20px;
+}
+.outlet{
+    position: relative;
+    text-align: center;
+    height: 95vh;
+    overflow: auto;
+}

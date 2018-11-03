@@ -1,0 +1,18 @@
+.container{
+    margin: auto;
+    margin-top: 10vh;
+    text-align: center;
+    font-size: large;
+    font: bold;
+    border: 1px solid black;
+    border-radius: 2em;
+    padding: 1em;
+    background-color: whitesmoke;
+    width : 30em;
+}
+.item{
+    margin: 10px;
+}
+button{
+    margin: 10px;
+}

@@ -1,0 +1,31 @@
+<h3>Critères de recherche</h3>
+<div class="criteria">
+  <label>
+    Intitulé
+    <input (keyup) = "onKeyboard()" [(ngModel)]="intitule" type='text' />
+  </label>
+  <label>
+        Nom du demandeur
+      <input type='text' [(ngModel)]="nom" (keyup) = "onKeyboard()" />
+  </label>
+  <label>
+    Date entre le
+    <input type='date' [(ngModel)]="dateBefore" (ngModelChange) = "onKeyboard()"/>
+    et le 
+    <input type='date' [(ngModel)]="dateAfter" (ngModelChange) = "onKeyboard()"/>
+  </label>
+</div>
+
+<div class="container">
+<ul class="list-group">
+    <li class="list-group-item" *ngFor="let ndf of listeNdf" [routerLink]="['..','list',ndf._id]" RouterLinkActive="list-group-item active">
+      <h4>{{ndf.userData.intitule}} </h4>
+      <h5> {{ndf.idUser.nom}}</h5>
+  
+      <div class="subtitle">
+        {{ndf.userData.montant}} {{ndf.userData.devise}}, {{ndf.userData.date| date:'d MMM yyyy'}}, {{ndf.statut}}
+      </div>  
+
+    </li>
+  </ul>
+  </div>

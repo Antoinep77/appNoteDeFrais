@@ -1,0 +1,16 @@
+<div class= "container">
+  <div class="close" (click)="close()">Fermer</div>
+  <div>
+  <h1 *ngIf="Correspondent"> {{Correspondent.nom}}</h1>
+  </div>
+  <div #box class="messageBox">
+    <div class="messageContent" *ngFor="let m of listMessage" appChat [idCorrespondent]="Correspondent._id" [msg] = "m">
+      <div class="message" >
+        <div class="messageBlock"> {{m.content}}</div>
+        </div>
+    </div>
+  </div>
+  <div class = "inputArea">
+  <input [(ngModel)] ="writenContent" type="text" (keyup.enter)="send()"/>
+</div>
+</div>

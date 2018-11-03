@@ -1,0 +1,21 @@
+.block{
+    position: fixed;
+    bottom:20px;
+    left: 45vw;
+    text-align: center;
+    z-index: 10;
+}   
+
+.container{
+    text-align: left;
+    height: 8em;
+    overflow: auto;
+    border: 1px solid black;
+}
+.item{
+    cursor: pointer;
+}
+.icon{
+    cursor: pointer;
+    font-size: 50px;
+}

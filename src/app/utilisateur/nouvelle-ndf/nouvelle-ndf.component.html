@@ -1,0 +1,68 @@
+
+<div class="block">
+    <h1>Soumettre une nouvelle note de frais</h1>
+
+
+  <form (ngSubmit)="envoyerDemande()" #formulaire="ngForm" novalidate>
+
+    <div class="form">
+    <div class="form-group popover-test" title="Popover title" data-content="Popover body content is set in this attribute.">
+      <label>
+        Intitulé de la note de frais
+        <input placeholder="Intitulé de la note de frais" type="text" [(ngModel)]="n.userData.intitule" name="intitule"
+          class="form-control" required #intitule="ngModel" />
+        <div [hidden]="intitule.valid || intitule.pristine" class="alert alert-warning">
+          Champs requis
+        </div>
+      </label>
+    </div>
+
+    <div class="form-group">
+      <label>
+        Date de la note de frais
+        <input type="date" [(ngModel)]="n.userData.date" name="date" class="form-control" required #date="ngModel" />
+        <div [hidden]="date.valid || date.pristine" class="alert alert-warning">
+          Champs requis
+        </div>
+      </label>
+    </div>
+
+    <div class="form-group">
+
+      <label>
+        Montant
+      </label>
+      <div class="form-control">
+        <input placeholder="Montant de la note de frais" type="number" [(ngModel)]="n.userData.montant" name="montant"
+          required />
+
+
+
+        <select [(ngModel)]="n.userData.devise" name="devise" required>
+          <option *ngFor="let devise of listDevise">{{devise}}</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label>
+        Commentaire
+        <textarea placeholder="Commentaire" rows="3" cols="50" class="form-control" [(ngModel)]="n.userData.commentaire"
+          name="commentaire"></textarea>
+      </label>
+    </div>
+
+    <div class="form-group">
+      <label>
+        Documents supplémentaires
+        <input type='file' class='form-control' (change)="changementFichier($event.target.files)" name="fichier"
+          multiple="true">
+      </label>
+    </div>
+    
+    </div>
+    <div>
+      <button type="submit" class="btn btn-success" [disabled]="!formulaire.form.valid">Soumettre la demande</button>
+    </div>
+  </form>
+</div>

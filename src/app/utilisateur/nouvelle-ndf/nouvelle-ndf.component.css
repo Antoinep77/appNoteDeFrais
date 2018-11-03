@@ -1,0 +1,32 @@
+.ng-valid[required], .ng-valid.required  {
+    border-left: 8px solid #42A948; /* green */
+  }
+  
+
+  .ng-invalid:not(form)  {
+    border-left: 8px solid #a94442; /* red */
+  }
+  
+  .alert-warning{
+      padding: 6px
+  }
+  h1{
+      text-align: center;
+      font-size: x-large;
+  }
+
+  .block{
+      text-align: left;
+      float: center;
+      width: 30em;
+      margin: auto;
+      padding: 1em;
+      border: 1px solid grey;
+      border-radius: 2em;
+  }
+  .form{
+      overflow: auto;
+      height: 65vh;
+      margin: 10px 10px 10px 10px;
+  }
+

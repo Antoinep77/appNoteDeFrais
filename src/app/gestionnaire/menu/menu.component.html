@@ -1,0 +1,22 @@
+<div class="nav">
+    <nav>
+        <ul>
+        
+        <li [routerLink]='["list"]'>    Liste de vos notes à traiter </li>
+        
+        <li [routerLink]='["search"]'>       Rechercher une note de frais</li>
+        
+        <li [routerLink] = "['/',{outlets:{chat:null, primary: ['accueil']}}]">Déconnection</li>
+    
+        </ul>
+    </nav>
+    </div>
+    <div class="outlet">
+        <router-outlet></router-outlet>
+    </div>
+    
+    
+    
+    <div class = "chatButton">
+        <app-chat-button></app-chat-button>
+    </div>

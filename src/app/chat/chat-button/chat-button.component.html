@@ -1,0 +1,14 @@
+<div class="block">
+
+  <mat-menu #menu="matMenu" yPosition="above">
+    <button mat-menu-item *ngFor="let u of listCorrespondents" (click)="openChat(u)" class="item">
+      {{evalNumber(Counts[u._id])}} {{u.nom}}
+    </button>
+      <mat-divider></mat-divider>
+  </mat-menu>
+
+  
+    <mat-icon [matMenuTriggerFor]="menu" class="icon" [matBadge]="objectKeys(Counts).length" matBadgePosition="before" matBadgeColor="warn"
+      (click)="onClick()"> message </mat-icon>
+  
+</div>

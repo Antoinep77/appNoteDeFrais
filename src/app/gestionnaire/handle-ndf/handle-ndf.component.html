@@ -1,0 +1,45 @@
+<div *ngIf="ndf" class = "container">
+
+  <h1 *ngIf="user">
+    Note de frais de {{user.nom}}
+  </h1>
+
+  <div class="item">
+    Intitulé de la note de frais : {{ndf.userData.intitule}}
+  </div>
+
+  <div class="item">
+    Pour un montant de {{ndf.userData.montant}} {{ndf.userData.devise}} le {{ndf.userData.date|date: 'dd MMMM yyyy'}}
+  </div>
+  <div  class="item">
+    Commentaire : {{ndf.userData.commentaire}}
+  </div>
+
+  <div *ngIf="files.length==0"  class="item">
+    Aucun document n'a été associé avec la demande.
+  </div>
+  <div *ngIf="files.length!=0"  class="item">
+    <div>
+      {{files.length}} documents associés à la note de frais
+    </div>
+    <button mat-raised-button color="primary" (click)='download()'  class="item">
+      Télécharger les documents associés
+    </button>
+  </div>
+
+  <div  class="item">
+    Statut : {{ndf.statut}}
+  </div>
+  <div  class="item">
+    <label>
+      <div>
+        Votre commentaire
+      </div>
+      <textarea [(ngModel)]='this.ndf.gestData.commentaire' row='5' cols='50' [disabled]="ndf.statut != 'en attente'"></textarea>
+    </label>
+  </div>
+  <div *ngIf="ndf.statut == 'en attente'"  class="item">
+    <button mat-raised-button color="primary"(click)="accepter()">Accepter</button>
+    <button mat-raised-button color="primary" (click)="refuser()">Refuser</button>
+  </div>
+</div>

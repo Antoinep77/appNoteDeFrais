@@ -1,0 +1,13 @@
+ <h1>Liste des gestionnaires</h1>
+ <ul>
+    <li *ngFor = "let gest of listGest"><a routerLink='/admin/gest/{{gest._id}}'>{{gest.nom}}  </a></li>
+  </ul>
+
+
+<h1>Liste des utilisateurs</h1>
+<ul>
+  <li *ngFor = "let user of listUser"><a routerLink='/admin/user/{{user._id}}'>{{user.nom}}  </a></li>
+</ul>
+
+<button routerLink = "/admin/add/user">Ajouter un utilisateur</button>
+<button routerLink = "/admin/add/gest">Ajouter un gestionnaire</button>

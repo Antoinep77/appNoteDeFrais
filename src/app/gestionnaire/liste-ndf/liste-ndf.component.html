@@ -1,0 +1,19 @@
+<div class="list">
+
+  <h4>Liste à traiter</h4>
+
+  <ul class="list-group">
+    <li class="list-group-item" *ngFor="let ndf of listeNdf" [routerLink]="[ndf._id]" RouterLinkActive="list-group-item active">
+      <h5>{{ndf.userData.intitule}} </h5>
+  
+      <div class="subtitle">
+        {{ndf.userData.montant}} {{ndf.userData.devise}}, {{ndf.statut}}, {{ndf.userData.date| date:'d MMM yyyy'}}
+      </div>  
+
+    </li>
+  </ul>
+
+</div>
+<div class="outlet">
+<router-outlet></router-outlet>
+</div>

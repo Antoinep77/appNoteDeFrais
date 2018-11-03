@@ -1,0 +1,44 @@
+<div *ngIf="ndf" class = "container">
+
+  <h1>
+    Votre note de frais
+  </h1>
+
+  <div class="item">
+    Intitulé de la note de frais : {{ndf.userData.intitule}}
+  </div>
+
+  <div class="item">
+    Pour un montant de {{ndf.userData.montant}} {{ndf.userData.devise}} le {{ndf.userData.date|date: 'dd MMMM yyyy'}}
+  </div>
+  <div  class="item">
+    Votre commentaire : 
+    <div>{{ndf.userData.commentaire}}</div>
+  </div>
+
+  <div *ngIf="files.length==0"  class="item">
+    Aucun document n'a été associé avec la demande.
+  </div>
+  <div *ngIf="files.length!=0"  class="item">
+    <div>
+      {{files.length}} documents associés à la note de frais
+    </div>
+    <button mat-raised-button color="primary" (click)='download()'  class="item">
+      Télécharger les documents associés
+    </button>
+  </div>
+
+  <div  class="item">
+    Statut : {{ndf.statut}}
+  </div>
+  <div *ngIf="ndf.statut != 'en attente'"  class="item">
+      <div>
+        Commentaire de votre gestionnaire :
+      </div>
+      {{ndf.gestData.commentaire}}
+  </div>
+
+  <div *ngIf="ndf.statut == 'en attente'"  class="item">
+    <button mat-raised-button color="primary" (click)="delete()">Supprimer la demande</button>
+  </div>
+</div>

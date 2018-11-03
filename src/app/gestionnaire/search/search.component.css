@@ -1,0 +1,7 @@
+label{
+    margin: 10px;
+}
+.container{
+    height: 70vh;
+    overflow: auto;
+}
